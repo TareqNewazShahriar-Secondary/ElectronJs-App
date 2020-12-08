@@ -1,8 +1,4 @@
-const electron = require('electron') 
-// Importing BrowserWindow from Main 
-
-console.log('electron.remote', electron.remote);
-const BrowserWindow = electron.remote.BrowserWindow; 
+const { ipcRenderer } = require('electron')
 
 var current = document.getElementById('print_button'); 
 var options = { 
@@ -21,12 +17,5 @@ var options = {
 } 
 
 current.addEventListener('click', (event) => { 
-	let win = BrowserWindow.getFocusedWindow(); 
-	// let win = BrowserWindow.getAllWindows()[0]; 
-
-	win.webContents.print(options, (success, failureReason) => { 
-		if (!success) console.log(failureReason); 
-
-		console.log('Print Initiated'); 
-	}); 
+	ipcRenderer.invoke('perform-action');
 }); 
