@@ -1,5 +1,7 @@
 const { ipcRenderer } = require('electron')
 
+console.log('ipcRenderer', ipcRenderer);
+
 var current = document.getElementById('print_button'); 
 var options = { 
 	silent: false, 
@@ -17,5 +19,5 @@ var options = {
 } 
 
 current.addEventListener('click', (event) => { 
-	ipcRenderer.invoke('perform-action');
+	ipcRenderer.send('perform-action', 23);
 }); 

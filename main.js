@@ -1,23 +1,31 @@
 const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 
-app.whenReady()
-   .then(() => {
-      console.log('app ready');
-      ipcMain.handle('perform-action', (event, ...args) => {
-         console.log('perform-action', event, args);
-         let win = BrowserWindow.getFocusedWindow();
-         // let win = BrowserWindow.getAllWindows()[0]; 
+let onlineStatusWindow;
 
-         win.webContents.print(options, (success, failureReason) => {
-            if (!success) console.log(failureReason);
+// app.whenReady()
+//    .then(createWindow)
+//    .then(() => {
+//       let x = ipcMain.on('perform-action', (event, ...args) => {
+//          console.log('perform-action', event, args);
+//          let win = BrowserWindow.getFocusedWindow();
+//          // let win = BrowserWindow.getAllWindows()[0]; 
 
-            console.log('Print Initiated');
-         });
-      });
+//          win.webContents.print(options, (success, failureReason) => {
+//             if (!success) console.log(failureReason);
 
-      createWindow();
-   })
-   .then(showNotification);
+//             console.log('Print Initiated');
+//          });
+//       });
+
+//       showNotification();
+
+//       console.log('ready then', x);
+//    });
+
+app.whenReady().then(() => {
+   onlineStatusWindow = new BrowserWindow({ width: 0, height: 0, show: false })
+   onlineStatusWindow.loadURL(`file://${__dirname}/online-detection.html`)
+ })
 
 app.on('window-all-closed', () => {
    if (process.platform !== 'darwin') {
@@ -42,7 +50,8 @@ function createWindow() {
       }
    });
 
-   win.loadFile('index.html')
+   //win.loadFile('notification.html');
+   win.loadFile('online-detection.html');
 }
 
 function showNotification() {
