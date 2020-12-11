@@ -4,8 +4,7 @@
 
 ContextBridge (contextIsolation) used.
 
-
-<img alt="app-window" src="app-screenshots/app-print-window.PNG" height="400" />
+<img alt="app-window" src="app-screenshots/app-window.PNG" height="400" />
 
 ### Print Output (in PDF)
 
