@@ -7,20 +7,22 @@
    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 
-<body style="background: white;">
-   <h1>Hello World!</h1>
-   <p>Node version <strong id="node-version"></strong></p>
+<body>
+   <h1>Let's Print</h1>
    <p>
-      Let's print.
+      Print App window.
       <button id="print-app">Print this page</button>
    </p>
 
    <p>
       Print a web page.
-      <button id="print-google">Print Google Home</button>
+      <button id="print-google">Print Google.com</button>
    </p>
-
-   
+   <p>
+      <hr style="width:25%; margin-left: 0;">
+      Available printers on this machine:
+      <ul id="printer-list"></ul>
+   </p>
 
    <script src="print.js"></script>
 </body>

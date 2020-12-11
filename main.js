@@ -14,6 +14,11 @@ app.whenReady().then(() => {
    onlineStatusWindow.loadURL(`file://${__dirname}/print.html`)
 })
 
+ipcMain.on('printer-list-request', () => {
+   console.log('main: printer-list-request');
+   onlineStatusWindow.webContents.send('printer-list-response', onlineStatusWindow.webContents.getPrinters());
+})
+
 ipcMain.on('print-app', (event) => {
    console.log('print-app')
    printFocusedWindow();

@@ -6,4 +6,7 @@ document.querySelector('#print-app')
 document.querySelector('#print-google')
    .addEventListener('click', window.appApis.printGoogle);
 
-document.querySelector('#node-version').innerHTML = '234234234';
+ window.appApis.printerList(data => {
+   document.querySelector('#printer-list').innerHTML =
+      data.map(x => `<li>${x.displayName}</li>`).join('');
+ });
