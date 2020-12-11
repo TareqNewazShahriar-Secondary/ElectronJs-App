@@ -1,9 +1,15 @@
-# ElectronJs-Sample-App
+# ElectronJs Sample Printing App
 
-![app-print-window](app-screenshots/app-print-window.PNG)
+Using ContextBridge (contextIsolation)
 
-## Print Output
 
-![print-result--app-print-window-printed-to-pdf](app-screenshots/print-result--app-print-window-printed-to-pdf.png)
+<img alt="app-window" src="app-screenshots/app-print-window.PNG" height="400" />
 
-![print-result--google.com-printed-to-pdf](app-screenshots/print-result--google.com-printed-to-pdf.png)
+## Print Output (in PDF)
+
+<img alt="print-result--app-print-window-printed-to-pdf" src="app-screenshots/print-result--app-print-window-printed-to-pdf.png"  height="400" />
+
+<img alt="print-result--google.com-printed-to-pdf" src="app-screenshots/print-result--google.com-printed-to-pdf.png"  height="400" />
+
+---
+TareqNewazShahriar
