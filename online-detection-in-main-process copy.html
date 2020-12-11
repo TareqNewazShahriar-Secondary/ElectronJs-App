@@ -9,20 +9,12 @@
 
 <body style="background: white;">
    <h1>Hello World!</h1>
-   <p>Node version <strong id="node-version"></strong></p>
    <p>
-      Let's print.
-      <button id="print-app">Print this page</button>
+      We are using node <strong id="node-version"></strong>,
+      Chrome <script>document.write(process.versions.chrome)</script>,
+      and Electron <script>document.write(process.versions.electron)</script>.
    </p>
-
-   <p>
-      Print a web page.
-      <button id="print-google">Print Google Home</button>
-   </p>
-
-   
-
-   <script src="print.js"></script>
+   <script src="online-detection-in-main-process.js"></script>
 </body>
 
 </html>

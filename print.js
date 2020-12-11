@@ -1,23 +1,9 @@
-const { ipcRenderer } = require('electron')
+console.log(window.appApis);
 
-console.log('ipcRenderer', ipcRenderer);
+document.querySelector('#print-app')
+   .addEventListener('click', window.appApis.printApp);
 
-var current = document.getElementById('print_button'); 
-var options = { 
-	silent: false, 
-	printBackground: true, 
-	color: false, 
-	margin: { 
-		marginType: 'printableArea'
-	}, 
-	landscape: false, 
-	pagesPerSheet: 1, 
-	collate: false, 
-	copies: 1, 
-	header: 'Header of the Page', 
-	footer: 'Footer of the Page'
-} 
+document.querySelector('#print-google')
+   .addEventListener('click', window.appApis.printGoogle);
 
-current.addEventListener('click', (event) => { 
-	ipcRenderer.send('perform-action', 23);
-}); 
+document.querySelector('#node-version').innerHTML = '234234234';

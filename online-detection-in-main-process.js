@@ -8,4 +8,7 @@ const updateOnlineStatus = () => {
 window.addEventListener('online', updateOnlineStatus)
 window.addEventListener('offline', updateOnlineStatus)
 
-updateOnlineStatus() 
+updateOnlineStatus()
+
+
+document.querySelector('#node-version').innerHTML = process.versions.node
