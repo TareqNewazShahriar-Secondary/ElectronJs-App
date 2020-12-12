@@ -1,12 +1,17 @@
 # ElectronJs App
 
-## Printing
+What this application is doing:
+* Prints contents of its own application window and a external web page.
+* Shows progress on taskbar while loadig the web page.
+* Shows OS level notification when printing is done.
 
-ContextBridge (contextIsolation) used.
+`contextIsolation` (`contextBridge`) is used in this application. To improve security, *Electron* team deprecated `nodeIntegration` flag and `contextIsolation` will be enabled by default from *Electron 12*.
+
+### Screenshots
 
 <img alt="app-window" src="app-screenshots/app-window.PNG" height="400" />
 
-### Print Output (in PDF)
+Print Output (in PDF)
 
 <img alt="print-result--app-print-window-printed-to-pdf" src="app-screenshots/print-result--app-print-window-printed-to-pdf.png"  height="400" />
 
