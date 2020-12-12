@@ -1,6 +1,6 @@
 # ElectronJs App
 
-What this application is doing:
+What does this application do:
 * Prints contents of its own application window and a external web page.
 * Shows progress on taskbar while loadig the web page.
 * Shows OS level notification when printing is done.
