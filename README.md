@@ -1,4 +1,4 @@
-# ElectronJs App
+# Electron App
 
 What does this application do:
 * Prints contents of its own application window and a external web page.
