@@ -10,3 +10,4 @@ document.querySelector('#print-google')
    document.querySelector('#printer-list').innerHTML =
       data.map(x => `<li>${x.displayName}</li>`).join('');
  });
+ 
