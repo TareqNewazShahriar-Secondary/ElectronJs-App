@@ -7,6 +7,12 @@ What does this application do:
 
 `contextIsolation` (`contextBridge`) is used in this application. To improve security, *Electron* team deprecated `nodeIntegration` flag and `contextIsolation` will be enabled by default from *Electron 12*.
 
+### How to up n run the project:
+Go to project directory and run commands
+* `npm install`
+* `npm start`
+
+
 ### Screenshots
 
 <img alt="app-window" src="app-screenshots/app-window.PNG" height="400" />
