@@ -1,6 +1,11 @@
-const { app, BrowserWindow, ipcMain, Notification } = require('electron')
+const { app, BrowserWindow, ipcMain, Notification, autoUpdater } = require('electron')
+require('update-electron-app')() // Checks for updates at app startup, then every ten minutes
 
 let mainWindow;
+
+//const server = 'https://your-deployment-url.com'
+//const url = `${server}/update/${process.platform}/${app.getVersion()}`
+//autoUpdater.setFeedURL({ url })
 
 app.whenReady().then(() => {
    mainWindow = new BrowserWindow({
