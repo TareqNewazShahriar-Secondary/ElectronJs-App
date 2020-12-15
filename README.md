@@ -5,7 +5,7 @@ What does this application do:
 * Shows progress on taskbar while loadig the web page.
 * Shows OS level notification when printing is done.
 
-`contextIsolation` (`contextBridge`) is used in this application. To improve security, *Electron* team deprecated `nodeIntegration` flag and `contextIsolation` will be enabled by default from *Electron 12*.
+`contextIsolation` (`contextBridge`) is used. To improve security, *Electron* team deprecated `nodeIntegration` flag and `contextIsolation` will be enabled by default from *Electron 12*.
 
 ### How to up n run the project:
 Go to project directory and run commands
