@@ -1,11 +1,6 @@
-const { app, BrowserWindow, ipcMain, Notification, autoUpdater } = require('electron')
-require('update-electron-app')() // Checks for updates at app startup, then every ten minutes
+const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 
 let mainWindow;
-
-//const server = 'https://your-deployment-url.com'
-//const url = `${server}/update/${process.platform}/${app.getVersion()}`
-//autoUpdater.setFeedURL({ url })
 
 app.whenReady().then(() => {
    mainWindow = new BrowserWindow({
@@ -34,6 +29,7 @@ ipcMain.on('print-google', (event) => {
    printGoogleHome();
 })
 
+ipcMain.on('update-app', openNewRelease);
 
 function printGoogleHome() {
    let printWindow = new BrowserWindow({ show: false, webPreferences: { contextIsolation: true } });
@@ -57,7 +53,7 @@ function printGoogleHome() {
             footer: 'Footer of the Page'
          }
          printWindow.webContents.print(options, (success, failureReason) => {
-            showNotification(`Printing external web page ${success ? 'success' : 'failed ('+failureReason+')'}`);
+            showNotification(`Printing external web page ${success ? 'success' : 'failed (' + failureReason + ')'}`);
             printWindow.close();
          });
       })
@@ -72,11 +68,21 @@ function printFocusedWindow() {
    console.log('Print Initiating on focused window');
    win.webContents.print({},
       (success, failureReason) => {
-         showNotification(`Printing app window ${success ? 'success' : 'failed ('+failureReason+')'}`);
+         showNotification(`Printing app window ${success ? 'success' : 'failed (' + failureReason + ')'}`);
       }
    );
 }
 
 function showNotification(title, body) {
    new Notification({ title, body }).show();
+}
+
+function openNewRelease() {
+   var child = require('child_process').execFile;
+   var executablePath = "c:\\my-electron-app-1.0.1 Setup.exe";
+
+   child(executablePath, function (err, data) {
+      mainWindow.webContents.send('to-view', err || data);
+      console.log(err, data);
+   });
 }

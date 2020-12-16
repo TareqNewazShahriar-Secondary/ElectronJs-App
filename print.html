@@ -3,27 +3,33 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>Hello World!</title>
+   <title>Let's Print</title>
    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 
 <body>
-   <h1>Let's Print 1.0.1</h1>
+   <h1>
+      Let's Print
+   </h1>
+   <div>
+      <button id="update-button">Check for Update</button>
+      <i>unorthodox update process</i>
+   </div>
    <p>
-      Print App window.
+      Print App window -
       <button id="print-app">Print this window</button>
    </p>
 
    <p>
-      Print a web page.
+      Print a web page -
       <button id="print-google">Print Google.com</button>
    </p>
+   <hr style="width:25%; margin-left: 0;">
    <p>
-      <hr style="width:25%; margin-left: 0;">
       Available printers on this machine:
       <ul id="printer-list"></ul>
    </p>
-
+   
    <script src="print.js"></script>
 </body>
 
