@@ -1,7 +1,7 @@
 # Electron App
 
 What does this application do:
-* Prints contents of its own application window and a external web page.
+* Prints contents of its own application window. Loads and prints external web page.
 * Shows progress on taskbar while loadig the web page.
 * Shows OS level notification when printing is done.
 * Updates the application using an unorthodox update mechanism. It will download the latest binary from the server (not implemented) and then it will execute it; that's it.
